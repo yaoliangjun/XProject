@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "BaseNavigationController.h"
+#import "TabBarController.h"
+
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +23,43 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [NSThread sleepForTimeInterval:1];
+    
+    // 日志
+    //[DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // 沙盒路径
+    //NSString *sandBoxPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    //LJLog(@"sandBoxPath = %@", sandBoxPath);
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self setupRootViewController];
+    [self.window makeKeyAndVisible];
+
+    [self setupKeyboardManager];
     return YES;
+}
+
+- (void)setupKeyboardManager
+{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enableAutoToolbar = YES;
+    manager.shouldResignOnTouchOutside = YES;
+}
+
+- (void)setupRootViewController
+{
+    self.window.rootViewController = [[BaseNavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+}
+
+// 进入主页
+- (void)enterMainPage
+{
+    self.window.rootViewController = nil;
+    self.window.rootViewController = [[TabBarController alloc] init];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

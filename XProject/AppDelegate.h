@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+// 进入主页
+- (void)enterMainPage;
 @end
 
