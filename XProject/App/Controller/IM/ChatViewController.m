@@ -14,13 +14,17 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSFetchedResultsController *resultController;
 @property (nonatomic, strong) PlaceHolderTextView *inputView;
-
 @end
 
 @implementation ChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 防止NavigationBar被键盘弹起时顶出屏幕外面
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    self.view = scrollView;
+    
     [self setupView];
     // 查询聊天记录
     [self loadChatMessage];
@@ -30,6 +34,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
     self.tableView.mj_header = header;
@@ -106,6 +111,7 @@
     [self.view addSubview:self.inputToolbar];
 }
 
+
 #pragma mark - 输入聊天信息工具条
 - (UIView *)inputToolbar
 {
@@ -168,6 +174,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
+    
     NSString *message = textView.text;
     if ([message rangeOfString:@"\n"].length != 0) {
         // 去除换行字符

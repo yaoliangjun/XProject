@@ -32,6 +32,9 @@
 		C450BC881C8070FE007F8D44 /* goldengate.png in Resources */ = {isa = PBXBuildFile; fileRef = C450BC771C8070FE007F8D44 /* goldengate.png */; };
 		C450BC891C8070FE007F8D44 /* goldengate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C450BC781C8070FE007F8D44 /* goldengate@2x.png */; };
 		C450BC8A1C8070FE007F8D44 /* goldengate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C450BC791C8070FE007F8D44 /* goldengate@3x.png */; };
+		C475FBD41C8679F1008FD18F /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C475FBD21C8679F1008FD18F /* NewsCell.m */; };
+		C475FBD51C8679F1008FD18F /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C475FBD31C8679F1008FD18F /* NewsCell.xib */; };
+		C475FBD71C868AA2008FD18F /* 7735164184.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C475FBD61C868AA2008FD18F /* 7735164184.jpeg */; };
 		C48AF2971C816E36001A2691 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48AF2961C816E36001A2691 /* ChatViewController.m */; };
 		C48AF29B1C81BA94001A2691 /* clip.png in Resources */ = {isa = PBXBuildFile; fileRef = C48AF2981C81BA94001A2691 /* clip.png */; };
 		C48AF29C1C81BA94001A2691 /* clip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48AF2991C81BA94001A2691 /* clip@3x.png */; };
@@ -328,6 +331,10 @@
 		C450BC771C8070FE007F8D44 /* goldengate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldengate.png; path = ../goldengate.imageset/goldengate.png; sourceTree = "<group>"; };
 		C450BC781C8070FE007F8D44 /* goldengate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "goldengate@2x.png"; path = "../goldengate.imageset/goldengate@2x.png"; sourceTree = "<group>"; };
 		C450BC791C8070FE007F8D44 /* goldengate@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "goldengate@3x.png"; path = "../goldengate.imageset/goldengate@3x.png"; sourceTree = "<group>"; };
+		C475FBD11C8679F1008FD18F /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		C475FBD21C8679F1008FD18F /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		C475FBD31C8679F1008FD18F /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		C475FBD61C868AA2008FD18F /* 7735164184.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7735164184.jpeg; sourceTree = "<group>"; };
 		C48AF2951C816E36001A2691 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		C48AF2961C816E36001A2691 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		C48AF2981C81BA94001A2691 /* clip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clip.png; sourceTree = "<group>"; };
@@ -992,6 +999,9 @@
 				C4E574EC1C7048B80019D19A /* EViewController.m */,
 				C4E574EE1C7048BF0019D19A /* FViewController.h */,
 				C4E574EF1C7048BF0019D19A /* FViewController.m */,
+				C475FBD11C8679F1008FD18F /* NewsCell.h */,
+				C475FBD21C8679F1008FD18F /* NewsCell.m */,
+				C475FBD31C8679F1008FD18F /* NewsCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1128,6 +1138,7 @@
 		C4E574BD1C7028EE0019D19A /* Plaza */ = {
 			isa = PBXGroup;
 			children = (
+				C475FBD61C868AA2008FD18F /* 7735164184.jpeg */,
 				C4E574BE1C7028EE0019D19A /* book_room@3x.png */,
 				C4E574BF1C7028EE0019D19A /* boot_room@2x.png */,
 				C4E574C01C7028EE0019D19A /* icon_contact@2x.png */,
@@ -2261,6 +2272,7 @@
 				C4EB26101C7F1B19000D91C4 /* tabbar_me@2x.png in Resources */,
 				C4EB26001C7F1B19000D91C4 /* tabbar_contacts@3x.png in Resources */,
 				C4EB260F1C7F1B19000D91C4 /* tabbar_mainframeHL@3x.png in Resources */,
+				C475FBD51C8679F1008FD18F /* NewsCell.xib in Resources */,
 				C4EB260A1C7F1B19000D91C4 /* tabbar_mainframe@2x.png in Resources */,
 				C4EB26091C7F1B19000D91C4 /* tabbar_discoverHL@3x.png in Resources */,
 				C4EB25D91C7F1B06000D91C4 /* green_btn@2x.png in Resources */,
@@ -2287,6 +2299,7 @@
 				C450BC801C8070FE007F8D44 /* demo_avatar_jobs.png in Resources */,
 				C4E574CD1C7028EE0019D19A /* icon_contact@3x.png in Resources */,
 				C4EB25DC1C7F1B06000D91C4 /* nav_bar.png in Resources */,
+				C475FBD71C868AA2008FD18F /* 7735164184.jpeg in Resources */,
 				C450BC7C1C8070FE007F8D44 /* demo_avatar_cook.png in Resources */,
 				C4EB260B1C7F1B19000D91C4 /* tabbar_mainframe@2x~ipad.png in Resources */,
 				C450BC8A1C8070FE007F8D44 /* goldengate@3x.png in Resources */,
@@ -2388,6 +2401,7 @@
 				C4EB25891C7EFEAB000D91C4 /* XMPPIQ+XEP_0060.m in Sources */,
 				C4EB25911C7EFEAB000D91C4 /* XMPPMessage+XEP_0085.m in Sources */,
 				C4EB23D51C7EFD76000D91C4 /* DDFileLogger.m in Sources */,
+				C475FBD41C8679F1008FD18F /* NewsCell.m in Sources */,
 				C4EB25721C7EFEAB000D91C4 /* XMPPRoomMessageHybridCoreDataStorageObject.m in Sources */,
 				C4EB25B51C7EFEAB000D91C4 /* NSXMLElement+XEP_0335.m in Sources */,
 				C4DBBE321C6ECB8500E2BDC1 /* NSString+Yao.m in Sources */,
