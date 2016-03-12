@@ -20,6 +20,10 @@ pod 'LKDBHelper'
 #pod 'CMPopTipView'
 #pod 'JSBadgeView'
 pod 'JSQMessagesViewController'
+pod 'Masonry', '~> 0.6.4'
+
+# Jerry Public Pod
+pod 'JerryPublicPod', :path => '../XProject/JerryPublicPod'
 
 end
 

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Jerry.Yao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface BViewController : BaseViewController
+@interface BViewController : BaseTableViewController
 
 @end

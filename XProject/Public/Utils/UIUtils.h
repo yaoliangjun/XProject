@@ -467,5 +467,14 @@
  */
 - (UIView *)createLineViewWitFrame:(CGRect)frame andColor:(UIColor *)color;
 
+/**
+ *  显示小菊花加载中...
+ *
+ *  @param isShow    是否显示菊花
+ *  @param superView 菊花要显示的父View
+ */
+- (void)showActivityIndicatorLoading:(BOOL)isShow inView:(UIView *)superView;
+
+
 @end
 

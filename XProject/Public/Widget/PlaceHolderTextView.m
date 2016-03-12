@@ -63,11 +63,15 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     }
     
     [UIView animateWithDuration:UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION animations:^{
+        PlaceHolderTextView *textView = [self viewWithTag:999];
         if([[self text] length] == 0) {
-            [[self viewWithTag:999] setAlpha:1];
+            
+            [textView setAlpha:1];
+//            [[self viewWithTag:999] setAlpha:1];
         }
         else {
-            [[self viewWithTag:999] setAlpha:0];
+            textView.alpha = 0;
+//            [[self viewWithTag:999] setAlpha:0];
         }
     }];
 }
@@ -102,7 +106,9 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     }
     
     if([[self text] length] == 0 && [[self placeholderText] length] > 0) {
-        [[self viewWithTag:999] setAlpha:1];
+//        [[self viewWithTag:999] setAlpha:1];
+        PlaceHolderTextView *textView = [self viewWithTag:999];
+        textView.alpha = 1;
     }
     
     [super drawRect:rect];

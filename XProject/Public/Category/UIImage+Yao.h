@@ -36,4 +36,6 @@
 
 - (UIImage *)scaleImageWithWidth:(CGFloat)width;
 
+- (UIImage*)imageRotatedByDegrees:(CGFloat)degrees;
+
 @end

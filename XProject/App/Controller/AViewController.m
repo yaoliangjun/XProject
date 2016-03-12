@@ -8,6 +8,7 @@
 
 #import "AViewController.h"
 #import "SKDropDown.h"
+#import "MainViewModel.h"
 
 @interface AViewController () <SKDropDownDelegate, UIGestureRecognizerDelegate>
 {
@@ -20,6 +21,15 @@
 @end
 
 @implementation AViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.title = @"A";
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,26 +57,34 @@
 #pragma mark - 下拉菜单
 - (void)setupDrawDownMenu
 {
-    UIButton *btnMenu = [UIButton buttonWithFrame:CGRectMake(10, 20, kScreenWidth - 20, 44) andTitle:@"打开菜单" andTitleColor:kWhiteColor andTitleHighlightedColor:kGrayColor andFont:kFont(16) andImage:nil andSelectedImage:nil andBackgroundColor:kOrangeColor andBackgroundImage:[UIImage imageWithColor:kOrangeColor] andBackgroundHighlightedImage:[UIImage imageWithColor:kOrangeWithCXPressColor] andBorderWidth:0 andBorderColor:nil andCornerRadius:5 andTarget:self andSelector:@selector(btnPressHandle)];
+    UIButton *btnMenu = [UIButton buttonWithFrame:CGRectMake(10, 20, kScreenWidth - 20, 44) andTitle:@"打开菜单" andTitleColor:kWhiteColor andTitleHighlightedColor:kGrayColor andFont:kFont(16) andImage:nil andSelectedImage:nil andBackgroundColor:kOrangeColor andBackgroundImage:[UIImage imageWithColor:kOrangeColor] andBackgroundHighlightedImage:[UIImage imageWithColor:kOrangeWithCXPressColor] andBorderWidth:0 andBorderColor:nil andCornerRadius:5 andTarget:self andSelector:@selector(btnMenuClick)];
     _btnMenu = btnMenu;
     [self.view addSubview:btnMenu];
 }
 
-- (void)btnPressHandle
+- (void)btnMenuClick
 {
-    // TODO
-    CGFloat kItemHeight = 44;
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:3];
+    notification.alertTitle = @"Jerry";
+    notification.alertBody  = @"你吃饭了吗？";
     
-    if (!_drapDownMenu) {
-//        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu inView:self.view withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
-        
-        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
-        _drapDownMenu.delegate = self;
-        
-    } else {
-        [_drapDownMenu setDropDownItems:_tipArray];
-        [_drapDownMenu.tableView reloadData];
-    }
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    
+    // TODO
+//    CGFloat kItemHeight = 44;
+//    
+//    if (!_drapDownMenu) {
+////        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu inView:self.view withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
+//        
+//        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
+//        _drapDownMenu.delegate = self;
+//        
+//    } else {
+//        [_drapDownMenu setDropDownItems:_tipArray];
+//        [_drapDownMenu.tableView reloadData];
+//    }
 
 }
 

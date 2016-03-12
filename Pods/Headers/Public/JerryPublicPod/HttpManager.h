@@ -1,0 +1,1 @@
+../../../../JerryPublicPod/Pod/Classes/HttpManager.h

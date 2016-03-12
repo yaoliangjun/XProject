@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JerryPublicPod-JerryPublicPod.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JerryPublicPod.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LKDBHelper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -45,6 +55,11 @@
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,17 +97,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BEEEFA762AE5E5C806DAAE5A2C71A51</key>
+		<key>3A3A2EA88FC0A8D531C02C9B44BC02A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3FBDA7D006F79DAEDB33A0BDC8F25273</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4507E4B69B1601465C9A05CDA1CC275F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49326AECAB47B59043371FB8093523C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>55DBDD8B7D446F1D618F303A9FB53209</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7269B8249A141909672C9B1C9BD62454</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
+		<key>DD09D63A37B00C0E4460F2B1EFBE7DBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF3E0B1DF897B57E19D8DD5F6DC2654A</key>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

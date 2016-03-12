@@ -11,7 +11,7 @@
 
 @interface UIUtils()
 {
-    
+    UIActivityIndicatorView *_loadingView;
 }
 
 @end
@@ -1303,5 +1303,32 @@ static UIUtils *_tools = nil;
     
     return lineView;
 }
+
+/**
+ *  显示小菊花加载中...
+ *
+ *  @param isShow    是否显示菊花
+ *  @param superView 菊花要显示的父View
+ */
+- (void)showActivityIndicatorLoading:(BOOL)isShow inView:(UIView *)superView
+{
+    if (isShow) {
+        if (!_loadingView) {
+            UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            loadingView.center = CGPointMake(superView.centerX, superView.centerY);
+            [loadingView setHidesWhenStopped:YES];
+            [superView addSubview:loadingView];
+            _loadingView = loadingView;
+        }
+        [superView bringSubviewToFront:_loadingView];
+        [_loadingView startAnimating];
+    }
+    else {
+        if (_loadingView) {
+            [_loadingView stopAnimating];
+        }
+    }
+}
+
 @end
 

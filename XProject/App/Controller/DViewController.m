@@ -11,8 +11,8 @@
 #import "MJRefresh.h"
 #import "NewsCell.h"
 
+
 @interface DViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation DViewController
@@ -26,30 +26,21 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    self.tableView.mj_header  = header;
-    // 隐藏时间
-    header.lastUpdatedTimeLabel.hidden = YES;
-    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
 - (void)loadNewData
 {
-    [NSThread sleepForTimeInterval:1];
-    [self.tableView.mj_header endRefreshing];
+    [self endRefreshingHeader];
 }
 
 - (void)loadMoreData
 {
-    [NSThread sleepForTimeInterval:1];
-    [self.tableView.mj_footer endRefreshing];
+    [self endRefreshingFooter];;
 }
 
 - (void)setupView {
-    self.view.backgroundColor = kWhiteColor;
     self.title = @"D";
-    [self.view addSubview:self.tableView];
+    [self addTableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -62,32 +53,20 @@
     static NSString *ID = @"NewsCell";
     
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-//    if (!cell) {
-//        cell= [[[NSBundle mainBundle]loadNibNamed:@"NewsCell" owner:nil options:nil] firstObject];
-//    }
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-//    }
-//    
-//    cell.textLabel.text = @"Jerry Yao";
     cell.title = @"哥哥";
     cell.content = @"天下第一哦";
-    cell.avatarName = @"icon_overtime";
+    cell.avatarName = @"icon60";
     return cell;
 }
 
-- (UITableView *)tableView
+- (void)addTableView
 {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64) style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 80;
-        [_tableView registerNib:[UINib nibWithNibName:@"NewsCell" bundle:nil] forCellReuseIdentifier:@"NewsCell"];
-        [_tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
-    return _tableView;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 80;
+    [self.tableView registerNib:[UINib nibWithNibName:@"NewsCell" bundle:nil] forCellReuseIdentifier:@"NewsCell"];
+    [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    [self.view addSubview:self.tableView];
 }
 
 // 去掉分割线左边的margin
@@ -99,8 +78,8 @@
 
 - (void)dealloc
 {
-    _tableView.delegate = nil;
-    _tableView.dataSource = nil;
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
 }
 
 @end

@@ -175,6 +175,7 @@
 
 - (void)dealloc
 {
+    _resultController.delegate = nil;
     _tableView.delegate = nil;
     _tableView.dataSource = nil;
 }

@@ -54,7 +54,6 @@ static XmppManager *_xmppManager = nil;
         dispatch_once(&onceToken, ^{
             _xmppManager = [[XmppManager alloc] init];
         });
-        
     }
     return _xmppManager;
 }

@@ -38,8 +38,22 @@
     [self setupRootViewController];
     [self.window makeKeyAndVisible];
 
+    [self setupBaiduMap];
     [self setupKeyboardManager];
+    
+    // 通知设置
+    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [application registerUserNotificationSettings:settings];
+    
+    
     return YES;
+}
+
+- (void)setupBaiduMap
+{
+    BMKMapManager *mapManager = [[BMKMapManager alloc] init];
+    [mapManager start:@"884v7BBC6tGg97BeihGDSfZN" generalDelegate:nil];
 }
 
 - (void)setupKeyboardManager
@@ -59,7 +73,6 @@
 {
     self.window.rootViewController = nil;
     self.window.rootViewController = [[TabBarController alloc] init];
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
