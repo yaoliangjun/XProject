@@ -12,6 +12,7 @@
 #import "LocationViewController.h"
 #import "RouteViewController.h"
 #import "PoiSearchViewController.h"
+#import "GeoCoderViewController.h"
 
 @interface BViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -158,7 +159,8 @@
             break;
         case 6:
         {
-            
+            GeoCoderViewController *geo = [[GeoCoderViewController alloc] init];
+            [self.navigationController pushViewController:geo animated:YES];
         }
             break;
         default:

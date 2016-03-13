@@ -16,6 +16,7 @@
 #import "DViewController.h"
 #import "EViewController.h"
 #import "FViewController.h"
+#import "GViewController.h"
 
 #import "LoginViewController.h"
 
@@ -28,6 +29,7 @@ typedef  NS_ENUM(NSInteger, MainView){
     MainViewD,
     MainViewE,
     MainViewF,
+    MainViewG,
     MainViewCount
 };
 
@@ -55,8 +57,8 @@ typedef  NS_ENUM(NSInteger, MainView){
 - (void)setupView
 {
     _datas = [[NSMutableArray alloc] init];
-    NSArray *titlesArray = @[@"A", @"B", @"C", @"D", @"E", @"F"];
-    NSArray *imagesArray = @[@"book_room", @"icon_contact", @"icon_meetingroom", @"icon_overtime", @"icon_vacation", @"vacation"];
+    NSArray *titlesArray = @[@"下拉菜单/本地通知", @"百度地图", @"Xmpp", @"Xib", @"菊花加载", @"Masonry", @"环信"];
+    NSArray *imagesArray = @[@"book_room", @"icon_contact", @"icon_meetingroom", @"icon_overtime", @"icon_vacation", @"vacation", @"book_room"];
     
     for (int index = 0; index < titlesArray.count; index++) {
         MainViewModel *mainViewModel = [[MainViewModel alloc] init];
@@ -161,6 +163,12 @@ typedef  NS_ENUM(NSInteger, MainView){
         {
             FViewController *fVC = [[FViewController alloc] init];
             [self.navigationController pushViewController:fVC animated:YES];
+        }
+            break;
+        case MainViewG:
+        {
+            GViewController *gVC = [[GViewController alloc] init];
+            [self.navigationController pushViewController:gVC animated:YES];
         }
             break;
     }

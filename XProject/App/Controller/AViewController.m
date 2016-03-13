@@ -60,9 +60,13 @@
     UIButton *btnMenu = [UIButton buttonWithFrame:CGRectMake(10, 20, kScreenWidth - 20, 44) andTitle:@"打开菜单" andTitleColor:kWhiteColor andTitleHighlightedColor:kGrayColor andFont:kFont(16) andImage:nil andSelectedImage:nil andBackgroundColor:kOrangeColor andBackgroundImage:[UIImage imageWithColor:kOrangeColor] andBackgroundHighlightedImage:[UIImage imageWithColor:kOrangeWithCXPressColor] andBorderWidth:0 andBorderColor:nil andCornerRadius:5 andTarget:self andSelector:@selector(btnMenuClick)];
     _btnMenu = btnMenu;
     [self.view addSubview:btnMenu];
+    
+    UIButton *btnLocalNotification = [UIButton buttonWithFrame:CGRectMake(10, btnMenu.bottom + 20, kScreenWidth - 20, 44) andTitle:@"退到后台接收本地通知" andTitleColor:kWhiteColor andTitleHighlightedColor:kGrayColor andFont:kFont(16) andImage:nil andSelectedImage:nil andBackgroundColor:kOrangeColor andBackgroundImage:[UIImage imageWithColor:kOrangeColor] andBackgroundHighlightedImage:[UIImage imageWithColor:kOrangeWithCXPressColor] andBorderWidth:0 andBorderColor:nil andCornerRadius:5 andTarget:self andSelector:@selector(btnLocalNotificationClick)];
+    [self.view addSubview:btnLocalNotification];
+    
 }
 
-- (void)btnMenuClick
+- (void)btnLocalNotificationClick
 {
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:3];
@@ -70,21 +74,23 @@
     notification.alertBody  = @"你吃饭了吗？";
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    
-    
+}
+
+- (void)btnMenuClick
+{
     // TODO
-//    CGFloat kItemHeight = 44;
-//    
-//    if (!_drapDownMenu) {
-////        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu inView:self.view withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
-//        
-//        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
-//        _drapDownMenu.delegate = self;
-//        
-//    } else {
-//        [_drapDownMenu setDropDownItems:_tipArray];
-//        [_drapDownMenu.tableView reloadData];
-//    }
+    CGFloat kItemHeight = 44;
+    
+    if (!_drapDownMenu) {
+//        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu inView:self.view withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
+        
+        _drapDownMenu = [[SKDropDown alloc] showDropDown:_btnMenu withItemHeight:kItemHeight withData:self.tipArray animationDirection:DropDownAnimationDirectionDown];
+        _drapDownMenu.delegate = self;
+        
+    } else {
+        [_drapDownMenu setDropDownItems:_tipArray];
+        [_drapDownMenu.tableView reloadData];
+    }
 
 }
 

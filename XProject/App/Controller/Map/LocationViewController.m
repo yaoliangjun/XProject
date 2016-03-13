@@ -34,10 +34,14 @@
     
     _locationService = [[BMKLocationService alloc] init];
     _locationService.delegate = self;
+//    设定定位的最小更新距离
+    _locationService.distanceFilter = 5;
+    _locationService.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     [_locationService startUserLocationService];
     
     _mapView.showsUserLocation = NO;//先关闭显示的定位图层
-    _mapView.userTrackingMode = BMKUserTrackingModeFollow;//设置定位的状态 好像必须要设置
+    //设置定位的状态 好像必须要设置！
+    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
     _mapView.showsUserLocation = YES;//显示定位图层
     _mapView.zoomLevel = 15;
     _mapView.delegate = self;
